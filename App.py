@@ -10,11 +10,11 @@ app=Flask(__name__)
 def Index():
 	return "Hola mundo!"
 
-@app.route('/add_contact'):
+@app.route('/add_contact')
 def add_contact():
 	return "Add contact"
 
-@app.route('/edit'):
+@app.route('/edit')
 def edit_contact():
 	return "Edit contact"
 
