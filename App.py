@@ -13,8 +13,11 @@ mysql= MySQL(app)
 
 #Decoradores
 @app.route('/')
-def Index():
-	return render_template('index.html')
+def index():
+	cur=mysql.connection.cursor()
+	cur.execute("SELECT * FROM contacts")
+	data = cur.fetchall()
+	return render_template('index.html', contacts = data)
 
 
 #Sessions/Settings
@@ -37,9 +40,13 @@ def add_contact():
 def edit_contact():
 	return "Edit contact"
 
-@app.route('/delete')
-def delete_contact():
-	return "Delete contact"
+@app.route('/delete/<string:id>')
+def delete_contact(id):
+	cur = mysql.connection.cursor()
+	cur.execute("DELETE FROM contacts where id=%s", (id,))
+	mysql.connection.commit()
+	flash('Contact Deleted syccesfully')
+	return redirect(url_for('index'))
 
 
 #Iniciar el servicio
