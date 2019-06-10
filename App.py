@@ -33,7 +33,7 @@ def add_contact():
 		cur = mysql.connection.cursor()
 		cur.execute('INSERT INTO contacts (fullname, phone, email) VALUES (%s, %s, %s)',(fullname, phone, email))
 		mysql.connection.commit()
-		flash('Contact Added sauccesfully')
+		flash('Contact Added succesfully!')
 	return redirect(url_for('index'))
 
 @app.route('/edit/<id>')
@@ -54,7 +54,7 @@ def change_contact(id):
 		cur = mysql.connection.cursor()
 		cur.execute("UPDATE contacts SET fullname=%s, phone=%s, email=%s where id =%s", (fullname, phone, email, id))
 		mysql.connection.commit()
-		flash('Contact UPDATE sauccesfully')
+		flash('The Contact has been update succesfully')
 		return redirect(url_for("index"))
 
 @app.route('/delete/<string:id>')
@@ -62,7 +62,7 @@ def delete_contact(id):
 	cur = mysql.connection.cursor()
 	cur.execute("DELETE FROM contacts where id=%s", (id,))
 	mysql.connection.commit()
-	flash('Contact Deleted sauccesfully')
+	flash('Contact Deleted succesfully')
 	return redirect(url_for('index'))
 
 

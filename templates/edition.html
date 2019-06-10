@@ -1,31 +1,30 @@
-{%extends 'layout.html'%}
+{% extends 'layout.html' %}
+{% block body %}
 
 
-<form action="/change/{{data.0}}" method="POST">
 
-	<input type="" name="fullname" placeholder="Full name" value="{{data.1}}">
 
-	<input type="" name="phone" placeholder="Phone" value="{{data.2}}">
+<div class="card card-body">
+	<h1 class="offset-md-4">Edit contact data</h1>
+	<div class="row">
+		<div class="col-md-4 offset-md-4">
+			<div class="form-group">
+				<form action="/change/{{data.0}}" method="POST">
+					<div class="pt-1"><input type="" name="fullname" placeholder="Full name" value="{{data.1}}" class="form-control"></div>
+					<div class="pt-1"><input type="" name="phone" placeholder="Phone" value="{{data.2}}" class="form-control"></div>
+					<div class="pt-1"><input type="" name="email" placeholder="Email"  value="{{data.3}}" class="form-control"></div>
+					<div class="pt-1"><div class="form-group pt-2"></div>
+						<button type="submit" class="btn btn-prymary btn-block">Edit contact</button>
+					</div>
+				</form>
+			</div>
+		</div>
 
-	<input type="" name="email" placeholder="Email"  value="{{data.3}}">
+</div>
+		
 	
-	<button type="submit">Edit contact</button>
-</form>
 
-<table>
-	<thead>
-		<tr>
-			<th>Full Name</th>
-			<th>Phone</th>
-			<th>Email</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>{{data.1}}</td>
-			<td>{{data.2}}</td>
-			<td>{{data.3}}</td>
-		</tr>
-	</tbody>
-</table>
-{ %endblock% }
+</div>
+
+
+{% endblock %}
