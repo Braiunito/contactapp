@@ -18,3 +18,5 @@ CAMPOS: "id"
 ---------------------------------------------------------------------------------------------------------------------------------------
 
 En el archivo "App.py" hay una sección nombrada "Sessions/Settings" ahí podran cambiar el nombre de la base de datos, contraseña de la misma y demas datos relacionados a la BD
+
+EN LA PRIMERA CARPETA PODRA ENCONTRAR LA BD PARA IMPORTAR SI DESEA OMITIR LA CREACIÓN DE LA MISMA
