@@ -1,0 +1,31 @@
+{%extends 'layout.html'%}
+
+
+<form action="/change/{{data.0}}" method="POST">
+
+	<input type="" name="fullname" placeholder="Full name" value="{{data.1}}">
+
+	<input type="" name="phone" placeholder="Phone" value="{{data.2}}">
+
+	<input type="" name="email" placeholder="Email"  value="{{data.3}}">
+	
+	<button type="submit">Edit contact</button>
+</form>
+
+<table>
+	<thead>
+		<tr>
+			<th>Full Name</th>
+			<th>Phone</th>
+			<th>Email</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>{{data.1}}</td>
+			<td>{{data.2}}</td>
+			<td>{{data.3}}</td>
+		</tr>
+	</tbody>
+</table>
+{ %endblock% }
